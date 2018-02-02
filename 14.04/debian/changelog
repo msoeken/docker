@@ -1,0 +1,5 @@
+cirkit (2.4-0ppa0) trusty; urgency=low
+
+  * Initial package
+
+ -- Mathias Soeken <mathias.soeken@epfl.ch>  Fri, 02 Feb 2018 12:32:10 +0100

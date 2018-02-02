@@ -1,0 +1,11 @@
+Source: cirkit
+Section: devel
+Priority: optional
+Maintainer: Mathias Soeken <mathias.soeken@epfl.ch>
+Build-Depends: cmake3, build-essential, ninja-build
+Homepage: https://github.com/msoeken/cirkit
+
+Package: cirkit
+Architecture: any
+Depends: libgmp-dev, libboost-all-dev, libreadline-dev, gcc-5, g++-5
+Description: CirKit logic synthesis toolkit
