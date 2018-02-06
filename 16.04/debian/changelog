@@ -1,5 +1,5 @@
-cirkit (2.4.0b3-0ppa4~ubuntu16.04) xenial; urgency=low
+cirkit (2.4.0b4-0ppa5~ubuntu16.04) xenial; urgency=low
 
   * Fix build.
 
- -- Mathias Soeken <mathias.soeken@epfl.ch>  Tue, 06 Feb 2018 09:32:19 -0500
+ -- Mathias Soeken <mathias.soeken@epfl.ch>  Tue, 06 Feb 2018 11:18:19 -0500
