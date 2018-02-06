@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Mathias Soeken
 
 RUN apt-get update
-RUN apt-get install -y cmake git gcc g++ libgmp-dev libboost-all-dev libreadline-dev ninja-build zlib1g-dev
+RUN apt-get install -y cmake git gcc g++ libgmp-dev libboost-all-dev libreadline-dev ninja-build zlib1g-dev build-essential devscripts pbuilder vim
 
 ENV HOME /root
 WORKDIR /root
@@ -10,11 +10,19 @@ WORKDIR /root
 RUN git clone -b develop --recursive https://github.com/msoeken/cirkit
 WORKDIR /root/cirkit
 
-RUN mkdir build
-WORKDIR /root/cirkit/build
+COPY debian /root/cirkit/debian/
+WORKDIR /root/
+RUN tar -acf cirkit_2.4.orig.tar.gz cirkit
 
-RUN cmake -G Ninja -DCMAKE_CXX_COMPILER=g++-5 -DPYBIND11_PYTHON_VERSION=2.7 -Denable_cirkit-addon-reversible=ON -Dcirkit_ENABLE_PYTHON_API=ON ..
-RUN ninja revkit revkit_python
+COPY sec.gpg /root/
+COPY pub.gpg /root/
+
+RUN gpg --import pub.gpg
+RUN gpg --allow-secret-key-import --import sec.gpg
+
+WORKDIR /root/cirkit
+
+RUN debuild -S -sa
 
 WORKDIR /root
 

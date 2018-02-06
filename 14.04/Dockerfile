@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update
-RUN apt-get install -y cmake3 git gcc-5 g++-5 libgmp-dev libboost-all-dev libreadline-dev ninja-build build-essential devscripts
+RUN apt-get install -y cmake3 git gcc-5 g++-5 libgmp-dev libboost-all-dev libreadline-dev ninja-build build-essential devscripts pbuilder vim
 
 ENV HOME /root
 WORKDIR /root
@@ -17,11 +17,15 @@ COPY debian /root/cirkit/debian/
 WORKDIR /root/
 RUN tar -acf cirkit_2.4.orig.tar.gz cirkit
 
-#RUN mkdir build
-#WORKDIR /root/cirkit/build
+COPY sec.gpg /root/
+COPY pub.gpg /root/
 
-#RUN cmake -G Ninja -DCMAKE_CXX_COMPILER=g++-5 -DPYBIND11_PYTHON_VERSION=2.7 -Denable_cirkit-addon-reversible=ON -Dcirkit_ENABLE_PYTHON_API=ON ..
-#RUN ninja revkit revkit_python
+RUN gpg --import pub.gpg
+RUN gpg --allow-secret-key-import --import sec.gpg
+
+WORKDIR /root/cirkit
+
+RUN debuild -S -sa
 
 WORKDIR /root
 

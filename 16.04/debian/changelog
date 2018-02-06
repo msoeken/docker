@@ -1,4 +1,4 @@
-cirkit (2.4.0b3-0ppa4~ubtun14.04) trusty; urgency=low
+cirkit (2.4.0b3-0ppa4~ubuntu16.04) xenial; urgency=low
 
   * Fix build.
 
