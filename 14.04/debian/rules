@@ -8,7 +8,7 @@ build:
 	cd $(BUILDDIR); cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -Denable_cirkit-addon-reversible=ON -DCMAKE_CXX_COMPILER=g++-5 -DPYBIND11_PYTHON_VERSION=2.7 -DBUILD_TESTING=OFF -Dcirkit_ENABLE_PYTHON_API=ON -DCMAKE_INSTALL_PREFIX=../debian/tmp/usr -DCMAKE_PYTHON_SITE_PATH=lib/python2.7/dist-packages ..
 	ninja -C $(BUILDDIR) cirkit cirkit_python revkit revkit_python
 	cd $(BUILDDIR); cmake -P cmake_install.cmake
-	cd $(BUILDDIR); cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -Denable_cirkit-addon-reversible=ON -DCMAKE_CXX_COMPILER=g++-5 -DPYBIND11_PYTHON_VERSION=3.4 -DBUILD_TESTING=OFF -Dcirkit_ENABLE_PYTHON_API=ON -DCMAKE_INSTALL_PREFIX=../debian/tmp/usr -DCMAKE_PYTHON_SITE_PATH=lib/python3/dist-packages ..
+	cd $(BUILDDIR); cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -Denable_cirkit-addon-reversible=ON -DCMAKE_CXX_COMPILER=g++-5 -DPYBIND11_PYTHON_VERSION=3.4 -DPYTHON_EXECUTABLE=/usr/bin/python3 -DBUILD_TESTING=OFF -Dcirkit_ENABLE_PYTHON_API=ON -DCMAKE_INSTALL_PREFIX=../debian/tmp/usr -DCMAKE_PYTHON_SITE_PATH=lib/python3/dist-packages ..
 	ninja -C $(BUILDDIR) cirkit_python revkit_python
 	cd $(BUILDDIR); cmake -P cmake_install.cmake
 
