@@ -1,5 +1,5 @@
-cirkit (2.4.0b7-0ppa8~ubuntu14.04) trusty; urgency=low
+cirkit (2.4.0b8-0ppa9~ubuntu14.04) trusty; urgency=low
 
   * Build Python 3.
 
- -- Mathias Soeken <mathias.soeken@epfl.ch>  Fri, 09 Feb 2018 07:10:28 +0000
+ -- Mathias Soeken <mathias.soeken@epfl.ch>  Fri, 09 Feb 2018 18:35:15 +0000
