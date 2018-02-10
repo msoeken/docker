@@ -26,6 +26,7 @@ RUN gpg --allow-secret-key-import --import sec.gpg
 WORKDIR /root/cirkit
 
 RUN debuild -S -sa
+RUN dput ppa:msoeken/ppa *.changes
 
 WORKDIR /root
 

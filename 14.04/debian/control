@@ -2,10 +2,10 @@ Source: cirkit
 Section: devel
 Priority: optional
 Maintainer: Mathias Soeken <mathias.soeken@epfl.ch>
-Build-Depends: cmake3, build-essential, ninja-build, gcc-5, g++-5, libgmp-dev, libboost-all-dev, libreadline-dev, gcc-5, g++-5
+Build-Depends: cmake3, build-essential, ninja-build, gcc-5, g++-5, libgmp-dev, libboost-all-dev, libreadline-dev, gcc-5, g++-5, python, python-dev, python3, python3-dev
 Homepage: https://github.com/msoeken/cirkit
 
 Package: cirkit
 Architecture: any
-Depends: libgmp-dev, libboost-all-dev, libreadline-dev, gcc-5, g++-5
+Depends: libgmp-dev, libboost-all-dev, libreadline-dev, gcc-5, g++-5, python, python3
 Description: CirKit logic synthesis toolkit
