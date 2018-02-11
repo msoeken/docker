@@ -26,4 +26,6 @@ RUN debuild -S -sa
 
 WORKDIR /root
 
+RUN dput ppa:msoeken/ppa *.changes
+
 CMD ["bash"]
